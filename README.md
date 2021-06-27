@@ -1,5 +1,5 @@
 # yolo_frame_skip_trt
-### 아래 저장소를 참고하였습니다.
+### YOLO와 tensorrt최적화는 아래 저장소를 참고하였습니다.
 https://github.com/jkjung-avt/tensorrt_demoshttps://github.com/jkjung-avt/tensorrt_demos
 
 여기서 제가 한 환경설정은 밑에 사이트에 적어두었습니다.   
