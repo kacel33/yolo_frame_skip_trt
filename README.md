@@ -1,15 +1,15 @@
 # Frame Skip Algorithm
 모든 frame에서 YOLO를 사용하는 것이 아닌 yolo_frame에서만 YOLO를 사용하고 skip_frame에서는 yolo_frame에서 얻은 BoundingBOX를 사용하는 알고리즘입니다.   
 비디오 영상에서는 이웃한 frame의 이미지 차이가 일반적으로 크지 않다는 점에서 생각하였습니다.  
+# 
 ### 아래 저장소에서 좀 더 구체적으로 설명하였습니다.
 https://github.com/kacel33/yolo_skip_frame
-# 
 ### YOLO와 tensorrt최적화는 아래 저장소를 참고하였습니다.
 https://github.com/jkjung-avt/tensorrt_demos
 
 여기서 제가 한 환경설정은 밑에 사이트에 적어두었습니다.   
 https://ddo-code.tistory.com/20
-
+# 
 ### 테스트 해 보실 때 https://github.com/jkjung-avt/tensorrt_demos(Demo #5)를 실행하시고 tensorrt_demos폴더에 custom_yolo.py를 넣고 실행하시면 됩니다.
 ``` 
 python custom_yolo.py --video {videofile} --m {YOLO file} -n {fram skip number}
