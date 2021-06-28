@@ -54,24 +54,24 @@ if __name__ == '__main__':
     vis = BBoxVisualization(cls_dict)
     trt_yolo = TrtYOLO(args.model, args.category_num, args.letter_box)
 
-    N_num = args.skip_frame
-    z = N_num
+    N_frame = args.skip_frame
+    
     cap = cv2.VideoCapture(args.video)
     start = time.time()
     while(cap.isOpened()):
         ret, img = cap.read()
         if ret:
-            if z == N_num:
+            if N_frame == args.skip_frame:
                 boxes, confs, clss = trt_yolo.detect(img, 0.3)
                 img = vis.draw_bboxes(img, boxes, confs, clss)
                 cv2.imshow('video', img)
-                z = 0
+                N_frame = 0
 
             else:
                 img = vis.draw_bboxes(img, boxes, confs, clss)
                 cv2.imshow('video', img)
                 
-                z = z + 1
+                N_frame += 1
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
