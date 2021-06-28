@@ -1,4 +1,9 @@
-# yolo_frame_skip_trt
+# Frame Skip Algorithm
+#### 모든 frame에서 YOLO를 사용하는 것이 아닌 yolo_frame에서만 YOLO를 사용하고 skip_frame에서는 yolo_frame에서 얻은 BoundingBOX를 사용하는 알고리즘입니다.
+#### 비디오 영상에서는 이웃한 frame의 이미지 차이가 일반적으로 크지 않다는 점에서 생각하였습니다.  
+#### 아래 저장소에서 좀 더 구체적으로 설명하였습니다.
+https://github.com/kacel33/yolo_skip_frame
+# 
 ### YOLO와 tensorrt최적화는 아래 저장소를 참고하였습니다.
 https://github.com/jkjung-avt/tensorrt_demos
 
@@ -14,8 +19,7 @@ python custom_yolo.py --video {videofile} --m {YOLO file} -n {fram skip number}
 <pre><code> python custom_yolo.py --video shorts1.mp4 -m yolov4-416 -n 3</code></pre>
 
 #  
-
-이전에 yolo_frame_skip이라는 저장소에서 frame_skip알고리즘을 제안하였습니다.  "https://github.com/kacel33/yolo_skip_frame"    
+이전에 yolo_frame_skip이라는 저장소에서 frame_skip알고리즘을 제안하였습니다.    
 거기에서는 opencv를 이용하여 진행하였는데  
 ## 이 저장소에서는 YOLOv4-416 pytorch버전을 Tensorrt로 변환 후에 실험하였습니다.
 
