@@ -1,14 +1,21 @@
 # yolo_frame_skip_trt
 ### YOLO와 tensorrt최적화는 아래 저장소를 참고하였습니다.
-https://github.com/jkjung-avt/tensorrt_demoshttps://github.com/jkjung-avt/tensorrt_demos
+https://github.com/jkjung-avt/tensorrt_demos
 
 여기서 제가 한 환경설정은 밑에 사이트에 적어두었습니다.   
 https://ddo-code.tistory.com/20
 
+### 테스트 해 보실 때 https://github.com/jkjung-avt/tensorrt_demos(Demo #5)를 실행하시고 tensorrt_demos폴더에 custom_yolo.py를 넣고 실행하시면 됩니다.
+``` 
+python custom_yolo.py --video {videofile} --m {YOLO file} -n {fram skip number}
+```
+
+### Example
+<pre><code> python custom_yolo.py --video shorts1.mp4 -m yolov4-416 -n 3</code></pre>
+
 #  
 
-이전에 yolo_frame_skip이라는 저장소에서 frame_skip알고리즘을 제안하였습니다.  
-https://github.com/kacel33/yolo_skip_frame  
+이전에 yolo_frame_skip이라는 저장소에서 frame_skip알고리즘을 제안하였습니다.  "https://github.com/kacel33/yolo_skip_frame"    
 거기에서는 opencv를 이용하여 진행하였는데  
 ## 이 저장소에서는 YOLOv4-416 pytorch버전을 Tensorrt로 변환 후에 실험하였습니다.
 
